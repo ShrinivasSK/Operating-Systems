@@ -1,0 +1,3 @@
+curl https://www.example.com/>example.html;curl -D - http://ip.jsontest.com/;resp=$(curl http://headers.jsontest.com/);for header in ${REQ_HEADERS//,/ };do
+    echo -n "$header:";echo $resp|jq ".$header";done;for file in $(ls JSONData/);do
+    resp=$(curl -d "json=`cat JSONData/$file`" -X POST http://validate.jsontest.com/);$(echo $resp|jq ".validate")&&echo $file>>valid.txt||echo $file>>invalid.txt;done;

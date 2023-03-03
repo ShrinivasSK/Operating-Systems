@@ -1,0 +1,5 @@
+default: demo1 demo2
+demo1: demo1.cpp libmemlab.a
+	g++ -o demo1 demo1.cpp libmemlab.a -pthread
+demo2: demo2.cpp libmemlab.a
+	g++ -o demo2 demo2.cpp libmemlab.a -pthread
